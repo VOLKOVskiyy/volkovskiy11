@@ -1,4 +1,29 @@
 import discord
+from discord.ext import commands
+
+client = commands.Bot(command_prefix = '')
+
+async def on_ready():
+    print('BOT is online')
+
+@client.command(pass_context = True)
+async def hello(ctx):
+    author = ctx.message.author
+    await ctx.send(f'{author.mention} Дарова')
+    
+@client.command(pass_context = True)
+async def lox(ctx):
+    author = ctx.author
+    await ctx.send(f'Лох найден - {author.mention}')
+
+@client.command(pass_context = True)
+async def hi(ctx):
+    author = ctx.message.author
+    await ctx.send(f'{author.mention} Дарова')
+
+client.run("NzAzNjI4OTE5NDMzMDY4NTk0.XqUjNQ.Bg5NIPGEI4hp6LX1qiJNtisnlsE")
+
+import discord
 from discord import utils
 
 import config
